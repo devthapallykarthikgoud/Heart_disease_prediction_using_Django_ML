@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Javascript Print</title>
+    <!--BootStrap CSS Start-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" />
+    <!--BootStrap CSS End-->
+    <!--JQuery Script Start-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js" type="text/javascript"></script>
+    <!--JQuery Script End-->
+    <!--Bootstrap Script Start-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>
+    <!--Bootstrap Script End-->
+    <!--Print Div Script Start-->
+    <script type="text/javascript">
+        function PrintDiv() {
+            var disp_setting = "toolbar=yes,location=no,directories=yes,menubar=yes,";
+            disp_setting += "";
+            var content_vlue = document.getElementById("divContent").innerHTML;
+            var docprint = window.open("", "", disp_setting);
+            docprint.document.open();
+            docprint.document.write('<html><head><title>Print Page Name</title>');
+            docprint.document.write('</head><body onLoad="self.print()">');
+            docprint.document.write(content_vlue);
+            docprint.document.write('</body></html>');
+            docprint.document.close();
+            docprint.focus();
+        }
+    </script>
+    <!--Print Div Script End-->
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div class=" container " id="divContent ">
+            <form class="form-inline ">
+                <div class="form-group ">
+                    <h1>h1 Bootstrap heading (36px)</h1>
+                    <h2>h2 Bootstrap heading (30px)</h2>
+                    <h3>h3 Bootstrap heading (24px)</h3>
+                    <h4>h4 Bootstrap heading (18px)</h4>
+                    <h5>h5 Bootstrap heading (14px)</h5>
+                    <h6>h6 Bootstrap heading (12px)</h6>
+                    <table class="table ">
+                        <thead>
+                            <tr>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Email</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Default</td>
+                                <td>Defaultson</td>
+                                <td>def@somemail.com</td>
+                            </tr>
+                            <tr class="success ">
+                                <td>Success</td>
+                                <td>Doe</td>
+                                <td>john@example.com</td>
+                            </tr>
+                            <tr class="danger ">
+                                <td>Danger</td>
+                                <td>Moe</td>
+                                <td>mary@example.com</td>
+                            </tr>
+                            <tr class="info ">
+                                <td>Info</td>
+                                <td>Dooley</td>
+                                <td>july@example.com</td>
+                            </tr>
+                            <tr class="warning ">
+                                <td>Warning</td>
+                                <td>Refs</td>
+                                <td>bo@example.com</td>
+                            </tr>
+                            <tr class="active ">
+                                <td>Active</td>
+                                <td>Activeson</td>
+                                <td>act@example.com</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+        </div>
+        <!--Print Button Start-->
+        <div class="form-group ">
+            <label for="pwd ">
+<a href="# " class="btn btn-success btn-lg " onclick="PrintDiv() ">
+<span class="glyphicon glyphicon-print "></span>Print
+</a>
+</label>
+        </div>
+        <!--Print Button End-->
+    </form>
+</body>
+
+</html>
